@@ -13,7 +13,7 @@ void main(int argc, char **argv)
 
 	while (1)
 	{
-		istty(STD_FILENO) ? interactiveMode ("$") : (void) 0;
+		isatty(STD_FILENO) ? interactiveMode ("$") : (void) 0;
 		/*singnal -> function to recieve the interupt signal CTRL+D*/
 		signal(SIGINT, interruptSigHandler);/*handler*/
 		count++;
