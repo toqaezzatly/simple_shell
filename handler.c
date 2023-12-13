@@ -2,11 +2,15 @@
 
 /**
 * interruptSigHandler - Signal handler for interrupt signals.
-*
+* @dummysignalnumber: just for compitability
 * Return: void
 */
-void interruptSigHandler(void)
+void interruptSigHandler(int dummysignalnumber)
 {
+int anotherdummy = 0;
+
+dummysignalnumber = 0;
+dummysignalnumber += anotherdummy;
 interactiveMode("\n$");
 }
 

@@ -25,7 +25,7 @@ int _str_len(const char *s);
 
 
 /*-------------handler.c-------------*/
-void interruptSigHandler(void);
+void interruptSigHandler(int dummysignalnumber);
 char *commentHashHandler(char *cmd);
 char *EnterCmd(int *num_read_chars);
 
