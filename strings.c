@@ -12,8 +12,8 @@ int _str_len(const char *s)
 	if (s == NULL)
 		return (0);
 
-	for (; s[length] != '\0'; length++);
-
+	for (; s[length] != '\0'; length++)
+		;
 	return (length);
 }
 
