@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "shell.h"
 #define INITIAL_BUFFER_SIZE 128
 /*
 * AllocateBuffer - Allocates memory for a character buffer.
@@ -10,7 +10,7 @@
 */
 char *AllocateBuffer(size_t size) 
 {
-return (char *)malloc(size * sizeof(char));
+return ((char *)malloc(size * sizeof(char)));
 }
 /*
 * ReallocateBuffer - Reallocates memory for a character buffer.
@@ -22,7 +22,7 @@ return (char *)malloc(size * sizeof(char));
 char *ReallocateBuffer(char *buffer, size_t *buffersize)
 {
 *buffersize *= 2;
-return (char *)realloc(buffer, *buffersize * sizeof(char));
+return ((char *)realloc(buffer, *buffersize * sizeof(char)));
 }
 /*
 * HandleMemoryAllocationFailure - Handles failure in memory allocation.
@@ -72,7 +72,8 @@ if (!buffer)
 {
 HandleMemoryAllocationFailure(buffer);
 }
-} else
+} 
+else
 {
 buffer = ReallocateBuffer(buffer, &buffersize);
 if (!buffer)
@@ -80,7 +81,6 @@ if (!buffer)
 HandleMemoryAllocationFailure(buffer);
 }
 }
-
 if (fgets(buffer + *num_read_chars, (int)(buffersize - *num_read_chars), stdin) == NULL)
 {
 if (feof(stdin)) 
@@ -96,7 +96,7 @@ break;
 HandleReadCommandFailure(buffer);
 }
 
-*num_read_chars += strlen(buffer + *num_read_chars);
+*num_read_chars += _str_len(buffer + *num_read_chars);
 
 if (buffer[*num_read_chars - 1] == '\n')
 {
@@ -106,6 +106,6 @@ break;
 }
 
 /* Assuming a return value here */
-return buffer;
+return (buffer);
 }
 

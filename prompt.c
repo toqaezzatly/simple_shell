@@ -1,7 +1,8 @@
 #include "shell.h"
 /**
  * interactiveMode - function to display prompt
- * @string: to be displayed 
+ * @string: to be displayed
+ *
  * Return: void
 */
 void interactiveMode(char *string)
