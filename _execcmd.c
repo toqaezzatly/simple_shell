@@ -78,3 +78,18 @@ void executeCommand(const char *command, char *args[])
 	}
 	free(commandPath);
 }
+void childProcess(const char *commandPath, char *args[]) {
+    if (execv(commandPath, args) == -1) {
+        perror("Execution failed");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void parentProcess(pid_t childPid, int *status) {
+    waitpid(childPid, status, 0);
+    if (WIFEXITED(*status)) {
+        printf("Child process exited with status %d\n", WEXITSTATUS(*status));
+    } else {
+        printf("Child process did not exit normally\n");
+    }
+}
