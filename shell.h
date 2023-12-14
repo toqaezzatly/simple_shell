@@ -29,4 +29,7 @@ void interruptSigHandler(int dummysignalnumber);
 char *commentHashHandler(char *cmd);
 char *EnterCmd(int *num_read_chars);
 
+/*--------------------main.c-----------------*/
+void printnewline(void);
+
 #endif
