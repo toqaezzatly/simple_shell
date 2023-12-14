@@ -29,14 +29,14 @@ int findExecutable(const char *command, char *commandPath)
 		if (access(commandPath, X_OK) == 0)
 		{
 			free(pathCopy);
-			return 1;
+			return (1);
 		}
 
 		token = strtok(NULL, ":");
 	}
 
 	free(pathCopy);
-	return 0;
+	return (0);
 }
 
 void executeCommand(const char *command, char *args[])
