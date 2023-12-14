@@ -21,13 +21,13 @@ void interactiveMode(char *string);
 
 /*--------------string.c------------*/
 int _str_len(const char *s);
-
-
-
+char *my_strtok(char *str, const char *delim);
+int my_strcmp(const char *str1, const char *str2);
 /*-------------handler.c-------------*/
 void interruptSigHandler(int dummysignalnumber);
 char *commentHashHandler(char *cmd);
 char *EnterCmd(int *num_read_chars);
+void process_Handler(char *cmd);
 
 /*--------------------main.c-----------------*/
 void printnewline(void);

@@ -34,7 +34,7 @@ int main(void)
 		{
 			cmd[num_read_chars - 1] = '\0';
 		}
-		process_input(cmd);
+		process_Handler(cmd);
 
 	}
 	return (0);
