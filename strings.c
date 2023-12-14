@@ -46,6 +46,7 @@ return (*(unsigned char *)str1 - *(unsigned char *)str2);
 char *my_strtok(char *str, const char *delim)
 {
 char *lastToken = NULL;
+char *tokenEnd;
 
 if (str != NULL)
 {
@@ -71,7 +72,7 @@ return (NULL);
 }
 
 /* Find the end of the token */
-char *tokenEnd = str + strcspn(str, delim);
+tokenEnd = str + strcspn(str, delim);
 
 /* If the token is not at the end of the string, terminate it */
 if (*tokenEnd != '\0')
