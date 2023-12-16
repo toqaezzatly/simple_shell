@@ -31,7 +31,7 @@ void process_Handler(char *cmd);
 
 /*--------------------main.c-----------------*/
 void printnewline(void);
-int findExecutable(const char *command, char *commandPath;
+int findExecutable(const char *command, char *commandPath);
 void executeCommand(const char *command, char *args[]);
 
 #endif
