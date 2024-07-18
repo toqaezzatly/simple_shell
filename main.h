@@ -20,16 +20,16 @@
 extern char **environ;
 
 /**
- * struct tokens_list - the tokens of the list
- * @token: the token string
- * @next: pointer to the next token
- *
- * Description: token list
- */
+* struct tokens_list - the tokens of the list
+* @token: the token string
+* @next: pointer to the next token
+*
+* Description: token list
+*/
 typedef struct tokens_list
 {
-    char *token;
-    struct tokens_list *next;
+char *token;
+struct tokens_list *next;
 } token_node;
 
 void print_environment(void);
