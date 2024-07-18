@@ -36,3 +36,4 @@ char *_strtok(char *string, const char *delim)
 
     return (token);
 }
+

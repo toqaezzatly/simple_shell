@@ -13,14 +13,3 @@ ssize_t _getline(char **command_buff, size_t *n, FILE *_stdin)
     return (getline(command_buff, n, _stdin));
 }
 
-/**
- * comment_handle - Handles comments in the command
- * @command: The command string
- */
-void comment_handle(char *command)
-{
-    char *comment = strchr(command, '#');
-
-    if (comment)
-        *comment = '\0';
-}

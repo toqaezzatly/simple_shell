@@ -28,3 +28,4 @@ void prompt_user(void)
         process_input(command);
     }
 }
+
