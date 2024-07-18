@@ -4,7 +4,7 @@
 * _getline - Reads a line from the standard input
 * @command_buff: The buffer to store the line
 * @n: The size of the buffer
-* @stdin: The input stream
+* @_stdin: The input stream
 *
 * Return: The number of characters read, or -1 on failure
 */
