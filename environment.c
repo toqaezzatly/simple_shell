@@ -1,16 +1,15 @@
 #include "main.h"
 
 /**
- * print_environment - Prints the current environment
- */
+* print_environment - Prints the current environment
+*/
 void print_environment(void)
 {
-    char **env = environ;
+char **env = environ;
 
-    while (*env)
-    {
-        printf("%s\n", *env);
-        env++;
-    }
+while (*env)
+{
+printf("%s\n", *env);
+env++;
 }
-
+}
