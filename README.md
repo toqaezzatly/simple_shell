@@ -1,140 +1,95 @@
-Here's a well-structured README file for your `simple_shell` project:
+<h1 align="center">
+  0x16. C - Simple Shell
+</h1>
 
-### `README.md`
+<p align="center">
+   📄 🚀
+</p>
 
-```markdown
-# Simple Shell
+<p align="center">
+  <strong>
+   Description
+  </strong>
+</p>
 
-## Description
+<p align="center">
+This project is an implementation of the shell created as a Milestone Project for the C code at ALX Africa Software Engineering. </br>
+The gates of shell is a project in the first trimester, that helps student to understand the advanced
+concepts behind the shell program include process, system call, bit manipulation, file managment, error handling ... </br>
+Shell is a simple UNIX command interpreter that replicates functionalities of the simple shell (sh). </br>
+This program was written entirely in C Language.
+</p>
 
-The Simple Shell project is a basic UNIX command line interpreter. It is designed to emulate a simple shell environment, allowing users to execute commands and interact with the system. This project is developed as part of the ALX Software Engineering program.
+## COPYRIGHT
+Copyright (C) 2022 by [**Reny Kipkoech**](https://github.com/Tr-reny) and [**Stellah Mbao**](https://github.com/StellahMbao) </br>
+All rights reserved
+
+ ## Description :
+This is a shell written in [C](https://en.wikipedia.org/wiki/C_(programming_language)).
+It is based on [the Thompson Shell](https://en.wikipedia.org/wiki/Thompson_shell).
+
+## Environment :
+
+Our shell was built and tested on  Ubuntu 14.04 LTS.
 
 ## Features
+* Display a prompt and wait for the user to type a command. A command line always ends with a new line.
+* If an executable cannot be found, print an error message and display the prompt again.
+* Handle errors.
+* Hndling the “end of file” condition (Ctrl+D)
+* Hanling the command line with arguments
+* Handle the PATH
+* Support the exit features and the exit status
+* Handle the Ctrl-C to not terminate the shell
+* Handling the command seperator `;`
+* Handling `&&` and `||` logical operators
+* Handle variable replacements `$?` and `$$`
+* Handle the comments `#`
+* Support the history feature
+* Support the file input
 
-- Displays a prompt and waits for the user to type a command.
-- Executes commands entered by the user.
-- Handles errors gracefully.
-- Handles the "end of file" condition (Ctrl+D).
-- Does not support advanced features like semicolons, pipes, redirections, or special characters.
+## Builtins
+Our shell has support for the following built-in commands:
 
-## Requirements
+| Command             | Definition                                                                                |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| exit [n]            | Exit the shell, with an optional exit status, n.                                          |
+| env                 | Print the environment.                                                                    |
+| setenv [var][value] | Set an environment variable and value. If the variable exists, the value will be updated. |
+| alias[name[='value]]| Reads aliases name                                                                        |
+| unsetenv [var]      | Remove an environment variable.                                                           |
+| cd [dir]            | Change the directory.                                                                     |
+| help [built-in]     | Read documentation for a built-in.                                                        |
 
-- Allowed editors: `vi`, `vim`, `emacs`
-- All files will be compiled on Ubuntu 20.04 LTS using `gcc`, with the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
-- All files should end with a new line
-- A `README.md` file at the root of the project is mandatory
-- Your code should use the Betty style. It will be checked using `betty-style.pl` and `betty-doc.pl`
-- The shell should not have any memory leaks
-- No more than 5 functions per file
-- All header files should be include guarded
-- Use system calls only when necessary
 
-## List of Allowed Functions and System Calls
-
-- `access` (man 2 access)
-- `chdir` (man 2 chdir)
-- `close` (man 2 close)
-- `closedir` (man 3 closedir)
-- `execve` (man 2 execve)
-- `exit` (man 3 exit)
-- `_exit` (man 2 _exit)
-- `fflush` (man 3 fflush)
-- `fork` (man 2 fork)
-- `free` (man 3 free)
-- `getcwd` (man 3 getcwd)
-- `getline` (man 3 getline)
-- `getpid` (man 2 getpid)
-- `isatty` (man 3 isatty)
-- `kill` (man 2 kill)
-- `malloc` (man 3 malloc)
-- `open` (man 2 open)
-- `opendir` (man 3 opendir)
-- `perror` (man 3 perror)
-- `read` (man 2 read)
-- `readdir` (man 3 readdir)
-- `signal` (man 2 signal)
-- `stat` (__xstat) (man 2 stat)
-- `lstat` (__lxstat) (man 2 lstat)
-- `fstat` (__fxstat) (man 2 fstat)
-- `strtok` (man 3 strtok)
-- `wait` (man 2 wait)
-- `waitpid` (man 2 waitpid)
-- `wait3` (man 2 wait3)
-- `wait4` (man 2 wait4)
-- `write` (man 2 write)
-
-## Compilation
-
-To compile the shell, use the following command:
-
-```sh
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+ ## Installation : Getting HSH
+ 
+Clone the below repository and compile the files into an executable using the GCC compiler.
+```
+https://github.com/StellahMbao/simple_shell.git
 ```
 
-## Usage
+### Basic usage :bulb:
+- First, Fork this Repository [Learn how to fork repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo).
+- Then Clone [Learn how to clone ](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
+- Create an executable by running the following command:
+- `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
+- From there, type in the following command and press your enter button.
+- `./hsh`
+- Final step: ENJOY!
 
-To start the shell, run the following command:
 
-```sh
-./hsh
+## Example :computer:
 ```
-
-### Interactive Mode
-
-In interactive mode, the shell displays a prompt and waits for the user to type a command. For example:
-
-```sh
-$ ./hsh
-#cisfun$ /bin/ls
-simple_shell main.c shell.c
-#cisfun$ exit
-$
+ls -la
 ```
+![114757753-e50c2180-9d64-11eb-95ea-fb9bba776c8c](https://user-images.githubusercontent.com/57016982/186711943-65abad4d-eedf-4d65-947d-3710e189bdee.png)
 
-### Non-Interactive Mode
+## Contributors :
+* [**Reny Kipkoech**](https://github.com/Tr-reny)
+* [**Stellah Mbao**](https://github.com/StellahMbao)
 
-In non-interactive mode, the shell reads commands from a file or pipe and executes them. For example:
-
-```sh
-$ echo "/bin/ls" | ./hsh
-simple_shell main.c shell.c
-$
-```
-
-## Example
-
-```sh
-$ ./hsh
-#cisfun$ /bin/ls
-hsh main.c shell.c
-#cisfun$ /bin/pwd
-/home/user/simple_shell
-#cisfun$ /bin/echo "Hello, world!"
-Hello, world!
-#cisfun$ exit
-$
-```
-
-## Authors
-
-- Your Name <your.email@example.com>
-- Partner's Name <partner.email@example.com>
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-### Explanation
-
-- **Description**: Provides an overview of the project.
-- **Features**: Lists the key features and limitations of the shell.
-- **Requirements**: Specifies the development environment and coding standards.
-- **Allowed Functions and System Calls**: Lists the allowed functions and system calls.
-- **Compilation**: Provides the command to compile the shell.
-- **Usage**: Explains how to run the shell in interactive and non-interactive modes.
-- **Example**: Shows an example interaction with the shell.
-- **Authors**: Lists the authors of the project.
-- **License**: Specifies the license for the project.
-
-This README should give a clear and comprehensive overview of your project, its requirements, and how to use it.
+## Acknowledgments :
+- The creators of the C language.
+- Our software engineer-in-residence.
+- Betty Holberton | Alx-Africa .
